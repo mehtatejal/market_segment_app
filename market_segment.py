@@ -14,7 +14,7 @@ image = Image.open("MarketSegment.png")
 st.image(image,use_column_width = True)
 
 text = "<b>This app is designed to help businesses decide which product they should focus on to sell more. The app recommends which product out of the 13 categories of products named Columbian, Lemon, Decaf Espresso, Darjeeling, Chamomile, Early Grey, Caffe Mocha, Decaf Irish Cream, Caffe Latte, Regular Espresso, Mint, Amaretto and Green Tea will be most likely to sell based on certain factors. These factors include the State, Market, Market Size, Product Type, and Type. The app's prediction accuracy is approximately 75%, making it a reliable tool for businesses to plan their inventory, make decisions regarding offers, and determine the price of the product. By entering the relevant details, businesses can receive data-driven suggestions that will help them increase their sales and profitability.</b>"
-st.write(text, unsafe_allow_html=True)
+st.write(f'<p style="text-align: justify">{text}</p>', unsafe_allow_html=True)
 
 #load the model
 # classifier = pickle.load(open('final_pipeline.pkl','rb'))
@@ -29,7 +29,7 @@ def segment_customers(input_data):
     prediction=classifier.predict(data)
 #     prediction=classifier.predict(pd.DataFrame(input_data, columns=['State', 'Market', 'Market Size', 'Product Type', 'Type']))
     output_str = prediction[0]
-    return ("In "+data['State']+", "+output_str+" has the best potential to succeed in" +data['Market Size']+"market for product type "+data['Product Type'] )
+    return (output_str+" has the best potential to succeed in given data" )
 
 def main():
     
