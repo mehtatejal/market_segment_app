@@ -31,7 +31,7 @@ def segment_customers(input_data):
 def main():
     
    
-    State = st.text_input("Type In The State",type='default',required=True)
+    State = st.text_input("Type In The State",type='default')
     Market = st.radio ( "Select Market", ('East', 'West','South','Central'),required=True)
     Market_Size = st.radio ( "Select Market Size", ('Small Market', 'Major Market'),required=True)
     Product_Type = st.radio ( "Select Product Type", ("Coffee","Tea","Espresso","Herbal Tea"),required=True )
@@ -42,7 +42,10 @@ def main():
 
     # when button is clicked, make the prediction and store it
     if st.button("Recommend Product"):
-        result=segment_customers([[State,Market,Market_Size,Product_Type,Type]])
+        # Check if the name field is empty
+        if not State:
+           st.warning("Please enter State Name")
+           result=segment_customers([[State,Market,Market_Size,Product_Type,Type]])
     
     st.success(result)
     
