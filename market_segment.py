@@ -45,6 +45,7 @@ def main():
         # Check if the name field is empty
         if not State:
            st.warning("Please enter State Name")
+        else:
            result=segment_customers([[State,Market,Market_Size,Product_Type,Type]])
     
     st.success(result)
