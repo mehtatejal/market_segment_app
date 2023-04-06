@@ -30,8 +30,10 @@ def segment_customers(input_data):
 
 def main():
     
-   
-    State = st.text_input("Type In The State",type='default')
+    state_names = ['Connecticut','Washington','California','Texas','New York','Ohio','Illinois','Louisiana','Florida','Wisconsin','Colorado','Missouri','Iowa',
+    'Massachusetts','Oklahoma','Utah','Oregon','New Mexico','New Hampshire','Nevada'] 
+    State = st.selectbox("Select a state:", state_names)
+#     State = st.text_input("Type In The State",type='default')
     Market = st.radio ( "Select Market", ('East', 'West','South','Central'))
     Market_Size = st.radio ( "Select Market Size", ('Small Market', 'Major Market'))
     Product_Type = st.radio ( "Select Product Type", ("Coffee","Tea","Espresso","Herbal Tea"))
