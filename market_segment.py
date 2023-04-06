@@ -13,8 +13,6 @@ st.subheader("Hello!    Welcome to Product Recommendation")
 image = Image.open("MarketSegment.png")
 st.image(image,use_column_width = True)
 
-# Set the theme of the app to 'dark'
-st.set_theme('dark')
 
 #load the model
 # classifier = pickle.load(open('final_pipeline.pkl','rb'))
