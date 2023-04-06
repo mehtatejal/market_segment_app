@@ -25,10 +25,11 @@ with urllib.request.urlopen(url) as f:
 
 # customer segmentation function
 def segment_customers(input_data):
-    state,_,market,type,_ = input_data
-    prediction=classifier.predict(pd.DataFrame(input_data, columns=['State', 'Market', 'Market Size', 'Product Type', 'Type']))
+    data = pd.DataFrame(input_data, columns=['State', 'Market', 'Market Size', 'Product Type', 'Type'])
+    prediction=classifier.predict(data)
+#     prediction=classifier.predict(pd.DataFrame(input_data, columns=['State', 'Market', 'Market Size', 'Product Type', 'Type']))
     output_str = prediction[0]
-    return ("In "+state+", "+output_str+" has the best potential to succeed in" +market+"market for product type "+type )
+    return ("In "+data['State']+", "+output_str+" has the best potential to succeed in" +data['Market Size']+"market for product type "+data['Product Type'] )
 
 def main():
     
