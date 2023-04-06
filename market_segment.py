@@ -29,7 +29,7 @@ def segment_customers(input_data):
     prediction=classifier.predict(data)
 #     prediction=classifier.predict(pd.DataFrame(input_data, columns=['State', 'Market', 'Market Size', 'Product Type', 'Type']))
     output_str = prediction[0]
-    return (output_str+" has the best potential to succeed in given data" )
+    return (output_str+" has the best potential to succeed for given data" )
 
 def main():
     
