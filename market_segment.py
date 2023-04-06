@@ -31,11 +31,11 @@ def segment_customers(input_data):
 def main():
     
    
-    State = st.text_input("Type In The State",type='default')
-    Market = st.radio ( "Select Market", ('East', 'West','South','Central') )
-    Market_Size = st.radio ( "Select Market Size", ('Small Market', 'Major Market') )
-    Product_Type = st.radio ( "Select Product Type", ("Coffee","Tea","Espresso","Herbal Tea") )
-    Type = st.radio ( "Please Select The Type", ('Regular', 'Decaf') )
+    State = st.text_input("Type In The State",type='default',required=True)
+    Market = st.radio ( "Select Market", ('East', 'West','South','Central'),required=True)
+    Market_Size = st.radio ( "Select Market Size", ('Small Market', 'Major Market'),required=True)
+    Product_Type = st.radio ( "Select Product Type", ("Coffee","Tea","Espresso","Herbal Tea"),required=True )
+    Type = st.radio ( "Please Select The Type", ('Regular', 'Decaf'),required=True )
     
     
     result = ""
