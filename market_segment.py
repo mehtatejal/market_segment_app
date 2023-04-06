@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import urllib.request
 
 # Set the title of the app
 st.title("Market Segmentation App")
