@@ -17,8 +17,8 @@ text = "<b>This app is designed to help businesses decide which product they sho
 st.write(f'<p style="text-align: justify">{text}</p>', unsafe_allow_html=True)
 
 #load the model
-# classifier = pickle.load(open('final_pipeline_updated.pkl','rb'))
-url = "https://github.com/mehtatejal/market_segment_app/raw/main/final_pipeline_updated.pkl"
+# classifier = pickle.load(open('final_pipeline_xgboost.pkl','rb'))
+url = "https://github.com/mehtatejal/market_segment_app/raw/main/final_pipeline_xgboost.pkl"
 with urllib.request.urlopen(url) as f:
     classifier = pickle.load(f)
 
